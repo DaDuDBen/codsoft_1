@@ -1,0 +1,28 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    GridLayout:
+        cols: 2
+        size_hint_y: None
+        height: 40
+
+        TextInput:
+            id: input_box
+            hint_text: 'Enter a new task'
+            size_hint_x: 0.8
+            height: 40
+
+        Button:
+            text: 'Add Task'
+            size_hint_x: 0.2
+            on_press: app.add_task(self)
+
+    ScrollView:
+        GridLayout:
+            id: tasks_layout
+            cols: 2
+            spacing: 10
+            size_hint_y: None
+            height: self.minimum_height
